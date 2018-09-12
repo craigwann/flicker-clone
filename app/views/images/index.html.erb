@@ -14,10 +14,15 @@
     <% end %>
   </span>
 </nav>
+<%= link_to "Upload an image", new_image_path %>
+<br>
 
 <% if @images %>
   <% @images.each do |image| %>
-  <li><%= image.title %></li>
+  <%= image.title %> <%= image.files %>
+  <br>
+  <%= link_to image_tag(image.img.url(:thumb)), image_path(image) %>
+  <br>
   <% end %>
 <% else %>
   <h2>there are currently no images in the system. dummy.</h2>

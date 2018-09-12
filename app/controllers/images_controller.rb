@@ -33,10 +33,17 @@ class ImagesController < ApplicationController
     else
       render :edit
     end
+
+  def destroy
+    @image = Image.find(params[:id])
+    @image.destroy
+    redirect_to "/"
+  end
+
   end
 private
   def image_params
-    params.require(:image).permit(:files, :comments, :tags, :favorites, :title)
+    params.require(:image).permit(:files, :comments, :tags, :favorites, :title, :img)
   end
 
 end
