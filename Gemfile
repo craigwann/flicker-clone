@@ -17,6 +17,7 @@ gem "paperclip", "~> 6.0.0"
 gem 'pivotal_git_scripts'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rails_admin', '~> 1.3'
+gem 'cancancan', '~> 2.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
