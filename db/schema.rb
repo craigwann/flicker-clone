@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_12_203619) do
+ActiveRecord::Schema.define(version: 2018_09_13_170029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +25,7 @@ ActiveRecord::Schema.define(version: 2018_09_12_203619) do
     t.string "img_content_type"
     t.integer "img_file_size"
     t.datetime "img_updated_at"
-  end
-
-  create_table "images_users", id: false, force: :cascade do |t|
-    t.bigint "image_id", null: false
-    t.bigint "user_id", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,6 +36,7 @@ ActiveRecord::Schema.define(version: 2018_09_12_203619) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

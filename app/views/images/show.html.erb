@@ -1,6 +1,7 @@
 <h1>Image details</h1>
 <h4>show.html.erb</h4>
 <h2><%= @image.title %></h2>
+<h2><%= @user %></h2>
 <%= image_tag(@image.img.url(:medium)) %>
 <br>
 &Qopf; <span><%= link_to "Back", root_path %></span>
